@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<zk xmlns="http://www.zkoss.org/2005/zul">
+    <window width="350px" title="Pilih Kategori Berita" apply="controller.Config" border="normal" >
+        <label style="font-size:12px;">Selamat datang di situs web tajaw.com, silahkan pilih kategori berita yang ingin ditampilkan, semakin sedikit kategori yang Anda pilih maka semakin cepat proses pengambilan data.</label>
+        <listbox id="listFeeds" width="350px" multiple="true" mold="paging" pageSize="12" checkmark="true">
+            <listhead id="listHeadFeeds">
+                <listheader style="border:0;" >
+                    <label sclass="tebal">Kategori</label>
+                </listheader>
+            </listhead>
+            <listitem></listitem>
+        </listbox>
+        <div width="100%" style="text-align: right;">
+            <button id="btnSimpan" label="Simpan" />
+        </div>
+    </window>
+</zk>

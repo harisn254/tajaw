@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?page id="modulFeeder" title="TaJaW.com | Referensi Berita Harian Anda!"?>
+<?taglib uri="http://www.zkoss.org/dsp/web/core" prefix="c" ?>
+<?link  rel="stylesheet" type="text/css" href="/css/content.css.dsp"?>
+<?link rel="stylesheet" type="text/css" href="/css/main.css" ?>
+<?link rel="stylesheet" type="text/css" href="/css/all.css" ?>
+<?link href="img/RSS_ico.png" rel="shortcut icon" type="image/x-icon" ?>
+<?script type="text/javascript" src="js/counter.js.dsp"?>
+<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:h="http://www.w3.org/1999/xhtml"
+    xmlns:w="http://www.zkoss.org/2005/zk/client" xmlns:n="http://www.zkoss.org/2005/zk/native">
+    <script>
+        function load(){
+        $.getJSON( "http://ip-api.com/json/",
+            function(data){
+		var lbl = zk.Widget.$(jq('$userIpAddress')),
+		val = 'ipAddress: '+data.query+', country: '+data.country+', regionName: '+data.regionName+', city: '+data.city+', isp: '+data.isp+', org: '+data.org;
+		lbl.setValue(val);
+                lbl.smartUpdate('value', val);
+                zAu.send(new zk.Event(zk.Widget.$(jq('$winMain')), 'onTrackIp', val));
+            });
+        }
+    </script>
+    <window id="winMain" height="100%" width="100%" apply="controller.Main">
+        <borderlayout style="background:#efefef;">
+            <north size="104px" border="0" style="background: url(img/header_long_bgr.jpg) repeat-x top;">
+            <!--<north size="77px" border="0">-->
+                <div>
+                    <div style="width:21px; height:101px; float:left; background: url(img/header_fix_L.jpg) repeat-x top;">
+                    </div>
+                    <flash src="swf/FeederPro.swf" style="display:block; margin:auto;float:left" loop="true" height="101px" width="128px"></flash>
+                    <image src="img/tajaw_bg_news_small_2.png" style="display:block; margin:auto;float:left" height="101px" width="375px"></image>
+                    <div style="width:21px; height:101px; float:right; background: url(img/header_fix_R.jpg) repeat-x top;">
+                        <h:div id="fb-root" style="display:block; top:80px; right:45px;  position: fixed; z-index:99;">
+                            <h:div class="fb-like" data-href="http://www.facebook.com/Tajawdotcom" data-send="true" data-layout="button_count" data-width="450" data-show-faces="true" style="z-index:99; margin:auto; display:block;"></h:div>
+                        </h:div>
+                    </div>
+                    <div style="float:left; width:100%; ">
+                        <separator style="background-color:#FF0000" width="100%" height="3px"> </separator>
+                    </div>
+                </div>
+            </north>
+            <west id="winWest" width="145px" title="SUMBER" splittable="true" collapsible="true" open="true" style="background:#efefef; text-align:center;">
+                <!-- **
+                      * Tempat untuk include halaman di sebelah kiri
+                      *-->
+                <borderlayout style="background:#efefef; ">
+                    <center style="background:#efefef; background: url(pat/random_grey_variations.png); " autoscroll="true">
+                        <!-- **
+                      * Tempat untuk include halaman di bagian kanan
+                      *-->
+                        <div style="text-align:center; ">  
+                            <label id="userIpAddress" style="display:none;">
+                                <custom-attributes org.zkoss.zk.ui.updateByClient="true" />
+                            </label>
+                            <separator height="20px" width="100%"/>
+                            <image src="sumber/antara_s.png" style="margin:auto;float:left; margin-left:5px;" height="76px" width="120px" >
+                                <attribute name="onClick">
+                                    <![CDATA[
+                                         Executions.getCurrent().sendRedirect("http://www.antaranews.com/","_blank");
+                                    ]]>
+                                </attribute>
+                            </image>
+                            <image src="sumber/detik_s.png" style="margin:auto;float:left; margin-left:5px;" height="76px" width="120px" >
+                                <attribute name="onClick">
+                                    <![CDATA[
+                                         Executions.getCurrent().sendRedirect("http://www.detik.com/","_blank");
+                                    ]]>
+                                </attribute>
+                            </image>
+                            <image src="sumber/kompas_s.png" style="margin:auto;float:left; margin-left:5px;" height="76px" width="120px" >
+                                <attribute name="onClick">
+                                    <![CDATA[
+                                         Executions.getCurrent().sendRedirect("http://www.kompas.com/","_blank");
+                                    ]]>
+                                </attribute>
+                            </image>
+                            <image src="sumber/metrotv_s.png" style="margin:auto;float:left; margin-left:5px;" height="76px" width="120px" >
+                                <attribute name="onClick">
+                                    <![CDATA[
+                                         Executions.getCurrent().sendRedirect("http://www.metrotvnews.com/","_blank");
+                                    ]]>
+                                </attribute>
+                            </image>
+<!--                            <image src="sumber/okezone.png" style="margin:auto;float:left; margin-left:5px;" height="76px" width="120px" >
+                                <attribute name="onClick">
+                                    <![CDATA[
+                                         Executions.getCurrent().sendRedirect("http://www.okezone.com/","_blank");
+                                    ]]>
+                                </attribute>
+                            </image>-->
+                            <image src="sumber/tempo_s.png" style="margin:auto;float:left; margin-left:5px;" height="76px" width="120px" >
+                                <attribute name="onClick">
+                                    <![CDATA[
+                                         Executions.getCurrent().sendRedirect("http://www.tempo.co/","_blank");
+                                    ]]>
+                                </attribute>
+                            </image>
+                            <image src="sumber/vivanews_s.png" style="margin:auto;float:left; margin-left:5px;" height="76px" width="120px" >
+                                <attribute name="onClick">
+                                    <![CDATA[
+                                         Executions.getCurrent().sendRedirect("http://viva.co.id/","_blank");
+                                    ]]>
+                                </attribute>
+                            </image>
+                        </div>
+                    </center>
+                </borderlayout>
+            </west>
+            <east id="winEast" width="150px" title="SPONSOR" flex="true" margins="0,5,5,0" splittable="true" collapsible="true" open="false" style="text-align:center;background:#efefef;">
+                <!-- **
+                      * Tempat untuk include halaman di sebelah kanan
+                      *-->
+                <borderlayout style="background:#efefef;">
+                    <center style="background:#efefef;" autoscroll="true">
+                        <!-- **
+                      * Tempat untuk include halaman di bagian kanan
+                      *-->
+                        <div height="100%" style="text-align:center; background: url('pat/random_grey_variations.png');">  
+                            
+                        </div>
+                    </center>
+                </borderlayout>
+            </east>
+            <!-- Content -->
+<!--            <center id="winCenter" title=" " style="background:#efefef; background: url('pat/escheresque.png');" autoscroll="true">-->
+            <center id="winCenter" title=" " style="background:#efefef;" autoscroll="true">
+<!--                  **
+                      * Tempat untuk include halaman di bagian tengah
+                      *-->
+<!--                <include id="incCenter" />-->
+                <div height="100%" >
+                    <menubar id="menubar" autodrop="true" visible="false">
+                        <menuitem image="img/recycle_16.png" label=" " id="refreshFeed">
+                        </menuitem>
+                        <menuitem image="img/tools.png" label=" " id="configFeed">
+                        </menuitem>
+                    </menubar>
+                    
+                    <tabbox id="tabboxLink" width="100%" height="95%">
+                        <tabs id="tabs">
+                        </tabs>
+                        <tabpanels id="panels">
+                        </tabpanels>
+                    </tabbox>
+                </div>
+            </center>
+            <south border="none" open="true" style="text-align: center; background: url(img/bg_footer_middle_blue.jpg) bottom; ">
+                <div height="20px" style="">
+                    <div width="100%" style="float: left;">
+                        <separator height="3px" style="background-color:#003466"></separator>
+                    </div>
+                    <div width="9px" height="20px" style="float: left; background: url(img/footer_l20.jpg) no-repeat top; ">
+                        
+                    </div>
+                    <div width="9px" height="20px" style="float: right; background: url(img/footer_r20.jpg) no-repeat top; ">
+                        
+                    </div>
+                    <label value="TaJaW.com &#169; 2013 | Referensi Berita Harian Anda!" style="color:#FFFFFF; font-size:12px; font-weight: bold;"></label>
+                </div>
+            </south>
+        </borderlayout>
+        <timer id="tmrReportConnectionCleaner"  delay="3000" repeats="true"></timer>
+    </window>
+</zk>

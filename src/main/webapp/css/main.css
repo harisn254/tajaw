@@ -1,0 +1,82 @@
+@CHARSET "ISO-8859-1";  /*SEC:LABEL:lblJudul*/ /*RULE:BASIC*/
+.z-panel-hl .z-panel-header {
+	background-color: transparent;
+	border: 0 none;
+	color: #363636;
+	padding: 2px 0 2px;
+}
+
+.z-loading {
+	top: 50% !important;
+	left: 45% !important;
+	align: center !important;
+	vertical-align: middle !important;
+}
+
+.z-listcell {
+	border-right-style: solid !important;
+	border-right-width: 1px !important;
+	border-right-color: #bcbcbc !important;
+}
+
+tr.z-row td.z-row-inner {
+	border-left-style: solid !important;
+	border-left-width: 1px !important;
+	border-left-color: #dedede ! important;
+	padding: 1px 0 1px 2px;
+}
+
+.z-paging {
+	background: none repeat scroll 0 0 #F9F9F9;
+	border-color: #CFCFCF;
+	border-style: solid;
+	border-width: 0 0 1px;
+	display: block;
+	padding: 2px 2px 2px 20px;
+	position: relative;
+}
+
+div.z-column-cnt {
+	padding: 4px 2px 4px;
+}
+
+tr.z-row td.z-row-inner {
+	border-color: white transparent white white;
+	border-style: solid;
+	border-width: 1px;
+	padding: 1px 1px 1px 2px;
+}
+
+div.z-row-cnt .z-label {
+	color: #343434;
+	font-family: verdana;
+	font-size: 11px;
+	font-weight: normal;
+}
+
+.lblJudul.z-label {
+	font-family: arial; /*PRO*/
+	color: #0080C0; /*PRO*/
+	font-size: 28px; /*PRO*/
+	font-style: normal; /*PRO*/
+	font-weight: bold; /*PRO*/
+}
+
+
+div.z-listcell-cnt {
+	font: 10px verdana;
+	color: #454545 !important;
+	height: 15px;
+	border:0 ;
+	margin: 0px;
+	padding: 0px;
+}
+
+div.z-listbox-body .z-listcell {
+	padding: 2px
+}
+
+div.z-listbox-body .z-listcell {
+	padding: 2px
+}
+/*RULE_E*/ /*SEC_E*/

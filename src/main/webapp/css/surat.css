@@ -1,0 +1,46 @@
+/* 
+    Document   : surat
+    Created on : Sep 11, 2012, 11:38:27 AM
+    Author     : Hari
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+html{
+    margin-left: auto;
+    margin-right: auto;
+}
+body {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:0.3%;
+    padding:0;
+    width: 595px;
+    font-size: 8px;
+}
+.container{
+    margin-top:50px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5px;
+    text-align: center;
+}
+.judul2{
+    font-size: 14px;
+    font-weight: bold;
+}
+.text{
+    font-size: 12px;
+    text-align: left;
+}
+.rowstyle{
+    background-color: #FFFFFF;
+}
+.gridstyle{
+    background-color: #FFFFFF;
+}

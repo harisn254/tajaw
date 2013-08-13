@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Document   : zk.xml
+    Created on : January 27, 2010, 12:03 PM
+    Author     : jote
+    Description:
+        Purpose of the document follows.
+-->
+
+<zk xmlns="http://www.zkoss.org/2005/zul">
+    <library-property>
+        <name>org.zkoss.zul.theme.fontSizeM</name>
+        <value>10px</value>
+    </library-property>
+    <library-property>
+        <name>org.zkoss.zul.theme.fontSizeS</name>
+        <value>10px</value>
+    </library-property>
+    <library-property>
+        <name>org.zkoss.zul.theme.fontSizeXS</name>
+        <value>10px</value>
+    </library-property>
+    <library-property>
+        <name>org.zkoss.theme.preferred</name>
+        <value>silvertail</value>
+    </library-property>
+   <!-- <language-config>
+        <addon-uri>/WEB-INF/lang-addon.xml</addon-uri>
+    </language-config>-->
+
+    <system-config>
+        <disable-event-thread>false</disable-event-thread>
+    </system-config>
+
+    <system-property>
+        <name>mainWindow</name>
+        <value>mainWindow</value>
+    </system-property>
+
+    <system-property>
+        <name>mainPage</name>
+        <value>mainPage</value>
+    </system-property>
+    <system-property>
+        <name>mainSdi</name>
+        <value>mainSdi</value>
+    </system-property>
+    <session-config>
+        <device-type>ajax</device-type>
+        <timeout-message>
+            script:alert('Sesi halaman Anda telah habis, klik Ok untuk melanjutkan.');
+            script:window.location = 'http://www.tajaw.com';
+        </timeout-message>
+    </session-config>
+</zk>
+
+
