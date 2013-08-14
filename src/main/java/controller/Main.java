@@ -31,15 +31,14 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
-import javax.naming.Context;
-import javax.naming.InitialContext;
-import javax.sql.DataSource;
 import org.zkoss.zk.ui.Executions;
 import org.zkoss.zk.ui.event.EventQueues;
 import org.zkoss.zk.ui.util.Clients;
 import org.zkoss.zul.Label;
 import org.zkoss.zul.Messagebox;
 import org.zkoss.zul.Window;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 
 /**
  *
@@ -332,20 +331,34 @@ public class Main extends GenericForwardComposer {
 
     public Connection getConnection() {
         Connection conn = null;
+        /*
+        Connection conn = null;
         try {
-            Context initContext = new InitialContext();
-            DataSource ds = (DataSource) initContext.lookup("java:comp/env/jdbc/tajawdotcom");
-//            DataSource ds = (DataSource) initContext.lookup("java:/comp/env/jdbc/feeder_pool");
-//            DataSource ds = (DataSource) initContext.lookup("jdbc/feeder_pool");
-            conn = ds.getConnection();
+        Context initContext = new InitialContext();
+        //            DataSource ds = (DataSource) initContext.lookup("java:comp/env/jdbc/tajawdotcom");
+        DataSource ds = (DataSource) initContext.lookup("java:/comp/env/jdbc/feeder_pool");
+        //            DataSource ds = (DataSource) initContext.lookup("jdbc/feeder_pool");
+        conn = ds.getConnection();
         } catch (Exception e) {
-            try {
-                Messagebox.show("" + e, "Informasi", Messagebox.OK, Messagebox.INFORMATION);
-                System.out.println(e);
-            } catch (Exception ex) {
-            }
+        try {
+        Messagebox.show("" + e, "Informasi", Messagebox.OK, Messagebox.INFORMATION);
+        System.out.println(e);
+        } catch (Exception ex) {
+        }
+        System.out.println(e);
+        }
+         */
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/newsfeed", "root", "password");
+        } catch (ClassNotFoundException e) {
+            System.out.println("Where is your MySQL JDBC Driver?");
+            System.out.println(e);
+        } catch (SQLException e) {
+            System.out.println("Connection Failed! Check output console");
             System.out.println(e);
         }
+
         return conn;
     }
 }

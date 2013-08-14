@@ -23,7 +23,7 @@
         <querydsl.version>2.7.0</querydsl.version>
         <maven.compiler.source>1.6</maven.compiler.source>
         <maven.compiler.target>1.6</maven.compiler.target>
-
+        <netbeans.hint.deploy.server>Tomcat</netbeans.hint.deploy.server>
     </properties>
     <repositories>
         <repository>
